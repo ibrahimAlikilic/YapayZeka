@@ -1,0 +1,77 @@
+YOLO ile model eğitimi sırasında karşılaşacağınız değerler ve ifadeler, modelin performansını, optimizasyon sürecini ve eğitim doğruluğunu anlamanıza yardımcı olur. İşte bu ifadeler ve değerlerin ayrıntılı açıklamaları:
+
+
+
+ 1. Epoch
+ Tanım: Bir epoch, modelin tüm eğitim verisinden bir kez geçmesini ifade eder. 
+ Önemi: Model her epoch'ta hatalarını düzeltir, böylece performansı gelişir. Eğitim süresi boyunca belirli sayıda epoch belirlenir.
+
+
+
+ 2. Batch
+ Tanım: Veriler, eğitim sırasında bir seferde işlenmesi için küçük gruplara (batch) bölünür. 
+ Örnek: Eğitim setinizde 10,000 görüntü varsa ve batch size 32 ise, model her epoch'ta \( \frac{10,000}{32} \) adımda tüm veriyi işlemiş olur.
+ Önemi: Bellek kullanımını optimize eder ve eğitimi hızlandırır.
+
+
+
+ 3. Loss (Kayıp Fonksiyonu)
+ Tanım: Modelin tahminleri ile gerçek değerler arasındaki hatayı ölçen bir metriktir.
+ Alt Türleri:
+   Localization Loss: Modelin bir nesnenin doğru yerini tahmin etme başarısını ölçer.
+   Confidence Loss: Modelin bir nesnenin varlığına duyduğu güvenin doğruluğunu değerlendirir.
+   Classification Loss: Modelin doğru sınıfı tahmin etme başarısını ölçer.
+ Önemi: Kayıp değeri küçüldükçe modelin tahmin doğruluğu artar.
+
+
+
+ 4. Learning Rate (Öğrenme Hızı)
+ Tanım: Modelin ağırlıklarını güncellerken yaptığı adımların büyüklüğüdür.
+ Önemi:
+   Çok yüksek olursa model optimizasyonu öğrenemez.
+   Çok düşük olursa eğitim süresi uzar.
+
+
+
+ 5. mAP (Mean Average Precision)
+ Tanım: Ortalama doğruluk ve geri çağırma değerlerinin birleştirilmiş bir metriğidir.
+ Ölçüm: Farklı IoU (Intersection over Union) eşik değerlerinde hesaplanır.
+   IoU: Modelin tahmin ettiği kutu ile gerçek kutu arasındaki örtüşmeyi ölçer.
+ Önemi: Modelin genel başarımını değerlendirir. Yüksek mAP, başarılı bir model anlamına gelir.
+
+
+
+ 6. Precision ve Recall
+ Precision: Doğru pozitif tahminlerin toplam pozitif tahminlere oranıdır. Yanlış alarmları azaltmayı hedefler.
+ Recall: Doğru pozitif tahminlerin toplam gerçek pozitiflere oranıdır. Kaçırılan nesneleri azaltmayı hedefler.
+
+
+
+ 7. Training vs Validation Loss
+ Training Loss: Eğitim verisi üzerinde hesaplanan kayıp değeri.
+ Validation Loss: Eğitim sırasında modele gösterilmeyen doğrulama verisi üzerinde hesaplanan kayıp değeri.
+ Önemi:
+   Eğer training loss düşük, validation loss yüksekse overfitting (aşırı öğrenme) olabilir.
+   Her iki kayıp da yüksekse model yeterince öğrenememiş olabilir (underfitting).
+
+
+
+ 8. FPS (Frames Per Second)
+ Tanım: Modelin saniyede kaç görüntüyü işleyebildiğini ifade eder.
+ Önemi: Özellikle gerçek zamanlı uygulamalar için hız göstergesidir.
+
+
+
+ 9. Gradient Norm
+ Tanım: Modelin ağırlıklarının güncellenme oranını gösterir.
+ Önemi: Aşırı yüksek veya düşük gradient norm, modelin öğrenme hızını etkileyebilir.
+
+
+
+ 10. Anchors (Çapalar)
+ Tanım: YOLO modelleri, nesne boyutlarını tahmin etmek için belirli referans kutuları (anchor) kullanır.
+ Önemi: Eğitim sırasında modelin farklı boyutlardaki nesneleri daha iyi öğrenmesine yardımcı olur.
+
+
+
+Eğer belirli bir metriği anlamakta zorlanıyorsanız veya bu değerlerden biri sizi endişelendiriyorsa, eğitim sonuçlarını ayrıntılı analiz ederek ve ayarları optimize ederek modelin performansını artırabilirsiniz.

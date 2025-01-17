@@ -1,0 +1,24 @@
+1) Veiryi incele tamamını jpg formatına getir ve hepsini aynı boyuta getir.
+2) https://github.com/AlexeyAB/darknet klonla 
+3) https://github.com/AlexeyAB/darknet -> yolov4.conv.137 ve yolov4.weights indir
+4) cfg içerisinde bulunan yolov4.cfg kopyalayıp darknet içerisine yapıştır.
+5) yolov4.cfg içerisinde değişiklik :
+batch: 64 veya 32 gibi bir değere ayarlayın.
+
+subdivisions: her bir batch'i kaç adıma böleceğimizi elirtir
+16 veya 8 gibi bir değere ayarlayın. Bu, GPU belleğinize göre değişebilir. (colab için 64 kullandım)
+
+max_batches: Eğitim için genelde classes * 2000 olarak ayarlanır. Örneğin, 2 sınıf varsa 4000 yapabilirsiniz.
+
+steps: Genelde 80% ve 90% olarak max_batch’in yüzdelik oranlarıdır, örneğin 3200, 3600.
+
+width ve height: Görüntülerinizi uyumlu hale getirmek için 416x416 veya 608x608 gibi değerlere ayarlayın.
+
+class ayarla 
+
+filters = (class+5)*3
+
+6) Tüm fotoğrafların txt üzerinde konumunu yaz ( test-train ayrı)
+7) 2 tane "".main" uzantılı dosya oluşturucan eski oluşturduklarına bak içeriğini hatırlarsın.
+8) colab geçince yazmış olduğun tüm pathleri tekrardan colab üzerinden değiştir ( yol kopyala deyip yenile yoksa hata veriyor.
+NOT : Etiketler ve görseller aynı klasörde olmalı.
