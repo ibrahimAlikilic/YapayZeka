@@ -16,8 +16,17 @@ os.makedirs(output_image_folder, exist_ok=True)
 os.makedirs(output_label_folder, exist_ok=True)
 
 for img_path in glob.glob(f"{image_folder}/*.jpg"): 
+    # Dosya var mı kontrolü
+    print(f"Kontrol edilen dosya: {img_path}")
+    if not os.path.exists(img_path):
+        print(f"Dosya bulunamadı: {img_path}")
+        continue
     # Görüntüyü oku
     img = cv2.imread(img_path)
+    # Görüntü okunabild mi kontrolü
+    if img is None:
+        print(f"Görüntü okunamadı: {img_path}")
+        continue
     h, w = img.shape[:2]
 
     # Görüntüyü yeniden boyutlandır
