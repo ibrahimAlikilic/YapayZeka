@@ -1,4 +1,4 @@
-# ip wabcam uygulamasını kullanarak telefondan görüntü alacağım
+# ip wabcam uygulamasını kullanarak telefondan görüntü alacağım.
 
 import cv2
 import numpy as np
