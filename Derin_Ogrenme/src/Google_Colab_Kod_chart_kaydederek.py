@@ -1,5 +1,4 @@
 # Google Colab kodu ile model egitimi yaparken olusan chart.png dosyasini kaydetme ve aynı grafiği kendimiz çizdirerek kaydetme
-
 # Google Drive'a baglanma
 from google.colab import drive
 drive.mount('/content/drive')
