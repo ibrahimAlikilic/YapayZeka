@@ -1,0 +1,41 @@
+Darknet derleme :
+	make -j$(nproc)  
+
+Model eğitimi :
+	 darknet dizininde :
+		./darknet detector train data/traffic_sign/obj.data cfg/yolov4.cfg weights/yolov4.conv.137 -map -dont_show | tee train.log
+
+backup olması gereken konum ve içeriği :
+	/home/ibrahim/darknet/backup/yolov4_last.weights  
+	/home/ibrahim/darknet/backup/yolov4_best.weights  
+
+Eğitimi durdurup devam ettirmek için :
+	./darknet detector train data/traffic_sign/obj.data cfg/yolov4.cfg backup/yolov4_last.weights -map -dont_show | tee -a train.log
+
+Eğitim Grafiği Çizdirmek :
+
+import matplotlib.pyplot as plt  
+import re  
+
+# Log dosyasını oku  
+log_file = "/home/ibrahim/darknet/train.log"  
+iterations, loss_values = [], []  
+
+with open(log_file, "r") as f:  
+    for line in f:  
+        match = re.search(r"(\d+): \d+\.\d+, (\d+\.\d+)", line)  
+        if match:  
+            iterations.append(int(match.group(1)))  
+            loss_values.append(float(match.group(2)))  
+
+# Grafiği oluştur  
+plt.figure(figsize=(10, 5))  
+plt.plot(iterations, loss_values, label="Loss")  
+plt.xlabel("Iterations")  
+plt.ylabel("Loss")  
+plt.title("Training Loss")  
+plt.legend()  
+plt.grid()  
+plt.savefig("/home/ibrahim/darknet/backup/training_loss.png")  
+plt.show()  
+
