@@ -76,7 +76,6 @@ except Exception as e:
 
 
 # Google Colab kodu ile model egitimi yaparken olusan chart.png dosyasini kaydetme ve aynı grafiği kendimiz çizdirerek kaydetme
-
 # Google Drive'a baglanma
 from google.colab import drive
 drive.mount('/content/drive')
@@ -124,7 +123,7 @@ chart_thread.start()
 !ln -s /content/drive/MyDrive/Otonom_Egitim_Calisma/traffic_weights/backup /content/darknet
 
 # Neredeyim
-%pwd
+%pwd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 
 # Model egitimi baslatma
 !./darknet detector train data/traffic_sign/obj.data yolov4.cfg yolov4.conv.137 -map -dont_show
