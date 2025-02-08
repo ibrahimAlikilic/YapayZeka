@@ -15,7 +15,7 @@ steps: Genelde 80% ve 90% olarak max_batch’in yüzdelik oranlarıdır, örneğ
 width ve height: Görüntülerinizi uyumlu hale getirmek için 416x416 veya 608x608 gibi değerlere ayarlayın.
 
 class ayarla 
-
+Yolo katmanındanönce gelen convolutional katmanı altındakileri değiştir. 
 filters = (class+5)*3
 
 6) Tüm fotoğrafların txt üzerinde konumunu yaz ( test-train ayrı)
