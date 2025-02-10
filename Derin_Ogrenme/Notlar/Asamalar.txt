@@ -22,3 +22,8 @@ filters = (class+5)*3
 7) 2 tane "".main" uzantılı dosya oluşturucan eski oluşturduklarına bak içeriğini hatırlarsın.
 8) colab geçince yazmış olduğun tüm pathleri tekrardan colab üzerinden değiştir ( yol kopyala deyip yenile yoksa hata veriyor.
 NOT : Etiketler ve görseller aynı klasörde olmalı.
+
+NOT : Trafik işaretleri gibi döndürünce manası değişebilecek modeller eğitiyorsan :
+	 .cfg dosyanı aç 
+		angle=0 döndürmeyi devre dışı bırakmış olduk
+		flip=0 ayna yansımasını devre dışı bırakmış olduk
